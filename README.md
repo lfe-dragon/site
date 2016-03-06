@@ -3,7 +3,7 @@
 [![][dragon-logo]][dragon-logo-large]
 
 [dragon-logo]: resources/images/dragon-logo-2-x250.png
-[dragon-logo-large]: resources/images/dragon-2-logo-x1000.png
+[dragon-logo-large]: resources/images/dragon-logo-2-x1000.png
 
 *A Web Framework for LFE*
 
