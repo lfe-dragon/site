@@ -5,7 +5,7 @@
 [dragon-logo]: resources/images/dragon-logo-x250.png
 [dragon-logo-large]: resources/images/dragon-logo-x1000.png
 
-*The Web Framework for LFE*
+*A Web Framework for LFE*
 
 ##### Contents
 
