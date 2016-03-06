@@ -1,0 +1,15 @@
+docs/master/current
+_build/*
+deps
+*.sublime-project
+*.sublime-workspace
+*.beam
+.eunit
+debug-*
+ebin/*
+bin/expm
+*.dump
+.rebar
+logs/*
+log/*
+*.xcf
