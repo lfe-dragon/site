@@ -19,11 +19,16 @@ pre-docs:
 	@echo "\nBuilding docs ...\n"
 
 gen-docs:
+	@echo "Generating landing page ..."
+	@mkdir -p $(CURRENT)
+	@cp -r $(DOCS_DIR)/source/* $(DOCS_PROD_DIR)
+
+gen-docs:
 	@echo "Generating docs ..."
 	@mkdir -p $(CURRENT)
-	@cp -r $(DOCS_DIR)/source/* $(CURRENT)
+	@cp -r $(DOCS_DIR)/landing-source/* $(CURRENT)
 
-local-docs: pre-docs gen-docs
+local-docs: pre-docs gen-landing gen-docs
 
 docs: clean-docs local-docs
 
