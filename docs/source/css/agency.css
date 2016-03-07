@@ -438,7 +438,7 @@ section h3.section-subheading {
     position: absolute;
     z-index: 100;
     background-color: #fed136;
-    color: #fff;
+    color: #000;
     border-radius: 100%;
     border: 7px solid #f1f1f1;
     text-align: center
