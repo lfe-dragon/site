@@ -19,7 +19,7 @@ pre-docs:
 	@echo "\nBuilding docs ...\n"
 
 gen-docs:
-	@echo "Will eventually generate docs ..."
+	@echo "Generating docs ..."
 	@mkdir -p $(CURRENT)
 	@cp -r $(DOCS_DIR)/source/* $(CURRENT)
 
@@ -28,8 +28,10 @@ local-docs: pre-docs gen-docs
 docs: clean-docs local-docs
 
 devdocs: docs
-	@echo "\nRunning docs server on http://$(LOCAL_DOCS_HOST):$(LOCAL_DOCS_PORT)..."
-	erl -s inets -eval 'inets:start(httpd,[{server_name,"devdocs"},{document_root, "$(CURRENT)"},{server_root, "$(CURRENT)"},{port, $(LOCAL_DOCS_PORT)},{mime_types,[{"html","text/html"},{"htm","text/html"},{"js","text/javascript"},{"css","text/css"},{"gif","image/gif"},{"jpg","image/jpeg"},{"jpeg","image/jpeg"},{"png","image/png"}]}]).'
+	@echo
+	@echo "Running docs server on http://$(LOCAL_DOCS_HOST):$(LOCAL_DOCS_PORT)... (To quit, hit ^c twice)"
+	@echo
+	@erl -s inets -noshell -eval 'inets:start(httpd,[{server_name,"devdocs"},{document_root, "$(CURRENT)"},{server_root, "$(CURRENT)"},{port, $(LOCAL_DOCS_PORT)},{mime_types,[{"html","text/html"},{"htm","text/html"},{"js","text/javascript"},{"css","text/css"},{"gif","image/gif"},{"jpg","image/jpeg"},{"jpeg","image/jpeg"},{"png","image/png"}]}]).'
 
 prod-docs: clean-docs $(DOCS_GIT_HACK) local-docs
 
