@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700
 }
@@ -54,7 +54,7 @@ h6 {
     color: #fff;
     background-color: #fed136;
     border-color: #fed136;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700
 }
@@ -98,7 +98,7 @@ fieldset[disabled] .btn-primary.active {
     color: #000;
     background-color: #fed136;
     border-color: #fed136;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 3px;
@@ -190,7 +190,7 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fed136
 }
 .navbar-default .nav li a {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
@@ -250,42 +250,46 @@ header {
     color: #fff
 }
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px
 }
-header .intro-text .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: italic;
-    font-size: 22px;
-    line-height: 22px;
+header .intro-text .intro-lead-in, header .intro-text .intro-lead-out {
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    line-height: 40px;
     margin-bottom: 25px
 }
+header .intro-text .intro-lead-out {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 20px;
+}
 header .intro-text .intro-heading {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 50px;
+    font-family: "Jim Nightshade", cursive !important;
+    font-size: 100px;
+    line-height: 100px;
     margin-bottom: 25px
 }
 @media (min-width: 768px) {
     header .intro-text {
-        padding-top: 300px;
+        padding-top: 200px;
         padding-bottom: 200px
     }
-    header .intro-text .intro-lead-in {
-        font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    header .intro-text .intro-lead-in , header .intro-text .intro-lead-out{
+        font-family: "Marcellus", Helvetica, Arial, sans-serif;
+        font-size: 80px;
+        line-height: 80px;
+        margin-bottom: 25px
+    }
+    header .intro-text .intro-lead-out {
         font-style: italic;
         font-size: 40px;
         line-height: 40px;
-        margin-bottom: 25px
     }
     header .intro-text .intro-heading {
-        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 75px;
-        line-height: 75px;
+        font-family: "Jim Nightshade", cursive !important;
+        font-size: 175px;
+        line-height: 175px;
         margin-bottom: 50px
     }
 }
@@ -299,7 +303,7 @@ section h2.section-heading {
 }
 section h3.section-subheading {
     font-size: 16px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: none;
     font-style: italic;
     font-weight: 400;
@@ -366,7 +370,7 @@ section h3.section-subheading {
     margin: 0
 }
 #portfolio .portfolio-item .portfolio-caption p {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 16px;
     margin: 0
@@ -592,25 +596,25 @@ section#more-info .form-control:focus {
     box-shadow: none
 }
 section#more-info::-webkit-input-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
 section#more-info:-moz-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
 section#more-info::-moz-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
 section#more-info:-ms-input-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
@@ -624,14 +628,14 @@ footer {
 }
 footer span.copyright {
     line-height: 40px;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-transform: none
 }
 footer ul.quicklinks {
     margin-bottom: 0;
     line-height: 40px;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-transform: none
 }
@@ -682,7 +686,7 @@ ul.social-buttons li a:active {
 }
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Marcellus", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 16px
 }
