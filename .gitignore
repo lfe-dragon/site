@@ -13,3 +13,13 @@ bin/expm
 logs/*
 log/*
 *.xcf
+site/docs-source/Gemfile.lock
+site/docs-source/build/*
+site/master/docs/current/*
+site/master/css
+site/master/img
+site/master/js
+site/master/index.html
+site/master/fonts
+site/master/font-awesome
+site/master/LICENSE
