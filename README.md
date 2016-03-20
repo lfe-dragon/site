@@ -21,7 +21,7 @@ TBD
 
 ## Documentation [&#x219F;](#contents)
 
-The Dragon project has it's [own site](http://dragon.lfe.io/current/) which
+The Dragon project has it's [own site](http://dragon.lfe.io/) which
 gives a general overview of what it offers. It also provides links to
 [dragon documentation](). You may find these particular pages of interest:
 
