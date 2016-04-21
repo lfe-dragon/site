@@ -40,7 +40,7 @@ gen-landing:
 
 gen-docs:
 	@echo "Generating docs ..."
-	@cd $(DOCS_DIR) && bundle exec middleman build --clean
+	@cd $(DOCS_DIR) && bundle exec middleman build --clean --verbose
 	@mkdir -p $(CURRENT)
 	@cp -r $(DOCS_BUILD_DIR)/* $(CURRENT)/
 	@rm site/master/LICENSE
