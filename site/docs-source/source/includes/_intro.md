@@ -18,7 +18,7 @@ In the world of mythology, a natural and amicable complement to the Phoenix is t
 
 Dragon's philosophy is oriented towards collections of libraries. This approach derives from that of the lmug collection of libraries ([lmug](https://github.com/lfex/lmug), 2014) which in turn was inspired by Clojure's take on [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface): [Ring](https://github.com/ring-clojure/ring/blob/master/SPEC). In this same spirit, Dragon makes no demands on how you do things -- it simply offers a collection of libraries, example usage, deployment advice, and lots of Lisp.
 
-For a tongue-in-cheek overview of the Dragon philosophy, see the [Dragon Manifesto]().
+For a tongue-in-cheek overview of the Dragon philosophy, see the [Dragon Manifesto](#the-dragon-manifesto).
 
 
 ## What You Get
@@ -54,12 +54,14 @@ Stay tuned!
 
 ## Documentation
 
-The Dragon documentation provided here is currently in progress. Currently the content is organized along the following lines:
+The Dragon documentation provided here is currently in progress. The content is organized along the following lines:
 
-* Project Overview (what you're reading)
+* Project Overview/Introduction (what you're reading)
 * Getting Started
+* Tutorial
+* The Dragon Manifesto
 
-This will eventually mature into sections with a user guide, tutorials, operators manual (e.g., deployment guides) and the like.
+This will eventually mature into sections with a user guide, more tutorials, operators manual (e.g., deployment guides) and the like.
 
 
 ## Doc Conventions

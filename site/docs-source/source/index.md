@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - intro
   - getting-started
+  - tutorial
   - manifesto
   - versions
   - license
