@@ -3,4 +3,4 @@ PROJECT = dragon
 ROOT_DIR = $(shell pwd)
 REPO = $(shell git config --get remote.origin.url)
 
-include resources/make/docs.mk
+include priv/make/docs.mk
