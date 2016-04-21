@@ -1,6 +1,6 @@
-# Dragon Tutorial
+# The Dragon Tutorial
 
-TBD
+The tutorial differs from the "Getting Started" guide in that it explores more of Dragon, its dependencies, and introduces more of its capabilities.
 
 ## Overview
 
