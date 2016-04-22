@@ -25,7 +25,7 @@ clean-docs:
 	@rm -rf site/master/css
 	@rm -rf site/master/img
 	@rm -rf site/master/js
-	@rm site/master/index.html
+	@rm -f site/master/index.html
 	@rm -rf site/master/fonts
 	@rm -rf site/master/font-awesome
 
