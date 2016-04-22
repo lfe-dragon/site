@@ -111,7 +111,7 @@ to be in the ``src`` directory for your project (it will get "compiled" to the p
 
 > YAWS configuration file:
 
-```apache
+```
 logdir = log
 
 <server localhost>
