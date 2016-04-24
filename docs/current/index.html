@@ -1,0 +1,407 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="js/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          setupLanguages([null]);
+        });
+      </script>
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <div class="content"><span class="title"> </span></div>
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <div class="content">
+        <div class="logo">
+        </div>
+        <span class="title"> </span></div>
+        <div class="lang-selector">
+              <a href="#" data-language-name=""></a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://dragon.lfe.io/'>Dragon Landing Page</a></li>
+            <li><a href='https://github.com/lfex/dragon/'>Dragon source</a></li>
+            <li><a href='http://github.com/tripit/slate/'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="introduction">Introduction</h1>
+
+<p><em>Web Development Using a Distributed, Concurrent Lisp</em></p>
+
+<p><a href="images/dragon-logo-2-200px.png"><img src="images/dragon-logo-2-200px.png" /></a></p>
+
+<h2 id="about-dragon">About Dragon</h2>
+
+<p>For a long time, LFE didn&rsquo;t have a web framework. Anyone doing web just rolled whatever they needed using YAWS or Cowboy and libraries from the BEAM ecosystem. This is a pretty standard approach in the Erlang world, and arguably a habit that could do more to embrace new users.</p>
+
+<p>With the massive growth of the Elixir community, many of whom have backgrounds in Ruby, Python, etc., the expectations have changed around providing developers with go-to solutions. In particular, the Elixir community has produced the extremely popular <a href="http://www.phoenixframework.org/">Phoenix Framework</a> for web development. Members of the LFE community have been singing its praises and asking for something similar.</p>
+
+<p>In the world of mythology, a natural and amicable complement to the Phoenix is the Dragon. The LFE web development project chose this name to deliberately emphasize this.  Due to the fact that both Elixir and LFE are BEAM languages, one can use the Phoenix framework with LFE. However, some LFE devs would prefer to not only use a web framework, but hack on one as well &ndash; doing both in LFE. Dragon is for them. It is this level of flexibility that we see the frameworks complementing each other.</p>
+
+<p>Dragon&rsquo;s philosophy is oriented towards collections of libraries. This approach derives from that of the lmug collection of libraries (<a href="https://github.com/lfex/lmug">lmug</a>, 2014) which in turn was inspired by Clojure&rsquo;s take on <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI</a>: <a href="https://github.com/ring-clojure/ring/blob/master/SPEC">Ring</a>. In this same spirit, Dragon makes no demands on how you do things &ndash; it simply offers a collection of libraries, example usage, deployment advice, and lots of Lisp.</p>
+
+<p>For a tongue-in-cheek overview of the Dragon philosophy, see the <a href="#the-dragon-manifesto">Dragon Manifesto</a>.</p>
+
+<h2 id="what-you-get">What You Get</h2>
+
+<p>Version 0 of Dragon ships with YAWS, <a href="#">lfest</a> (routes), <a href="#">exemplar</a> (S-expression-based XML and HTML), <a href="#">mnemosyne</a> (Nosql) , <a href="#">ljson</a>, and <a href="#">logjam</a>. As such, you have all the tools necessary to build simple web applications.</p>
+
+<h3 id="components">Components</h3>
+
+<p>Some of the libraries mentioned above touch upon the conceptual components of a Dragon application. These are as follows:</p>
+
+<ul>
+<li><strong>HTTPD</strong> - An OTP web server, complete with supervision tree and heartbeat support. This functionality is currently fulfilled only by YAWS.</li>
+<li><strong>Routing</strong> - A URL-based dispatch mechanism for web application resources (equally applicable to REST servers)</li>
+<li><strong>Content</strong> - Creating HTML and other response-ready content via S-expressions</li>
+<li><strong>Data</strong> - Storing and retrieving data in an Erlang-native (batteries-included) Nosql database</li>
+</ul>
+
+<p>How each of things gets done is up to the developer. We do provide examples and may eventually offer some best practices guides, but we don&rsquo;t impose implementation details around these. If you want to include messaging, you can either use the built-in capabilities of Erlang and LFE processes, or you can add RabbitMQ as a dependency for your system. Your data access code, your &ldquo;business logic&rdquo;, and your &ldquo;display&rdquo; or &ldquo;rendering logic&rdquo; should all be loosely coupled, but you may do this in whatever way you see fit.</p>
+
+<h3 id="what-39-s-coming">What&rsquo;s Coming</h3>
+
+<p>In future releases of Dragon, we will</p>
+
+<ul>
+<li>Provide the ability to easily use static HTML and HTML fragments (in either file or string form) in conjunction with S-expression-based output</li>
+<li>Provide additional, non-Mnesia Nosql integration</li>
+<li>Provide SQL/ACID integration</li>
+<li>Begin pulling in not only code Ring-like and WSGI-like functionality (think of these as &ldquo;feature composition&rdquo;)</li>
+<li>Add best-of-breed community middleware and functionality</li>
+<li>Include support for aadditional web servers &ndash; your v1 Dragon code won&rsquo;t have to change when you change web servers (though there will be a migration path from v0 Dragon to v1).</li>
+</ul>
+
+<p>Stay tuned!</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The Dragon documentation provided here is currently in progress. The content is organized along the following lines:</p>
+
+<ul>
+<li>Project Overview/Introduction (what you&rsquo;re reading)</li>
+<li>Getting Started</li>
+<li>Tutorial</li>
+<li>The Dragon Manifesto</li>
+</ul>
+
+<p>This will eventually mature into sections with a user guide, more tutorials, operators manual (e.g., deployment guides) and the like.</p>
+
+<h2 id="doc-conventions">Doc Conventions</h2>
+
+<p>We use styled call-outs to provide immediate visual cues about the nature of
+the information being shared.</p>
+
+<p>These are as follows:</p>
+
+<aside class="info">
+This style indicates useful information, background, or other insights.
+</aside>
+
+<aside class="success">
+This style indicates a best practice, good usage, and other tips for success.
+</aside>
+
+<aside class="caution">
+This style indicates one should use caution or that behaviour may not be as
+expected
+</aside>
+
+<aside class="danger">
+This style indicates information that could cause errors if ignored.
+</aside>
+
+          <h1 id="getting-started">Getting Started</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>This section lists the software and details the concepts needed in order to start using Dragon. Note that in this 0.0 &ldquo;release&rdquo; of Dragon, you will essentially be using a collection of components most actively used by LFE projects that create web sites or web services. These are not currently &ldquo;branded&rdquo; as being part of the Dragon project &ndash; that will come in the next release of Dragon.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To use Dragon, you will need to have the following installed and running (if applicable) on your system:</p>
+
+<ul>
+<li>Developer tools such as <code class="prettyprint">gcc</code>, <code class="prettyprint">make</code>, <code class="prettyprint">autoconf</code>, etc.</li>
+<li>Erlang</li>
+<li><a href="https://s3.amazonaws.com/rebar3/rebar3">rebar3</a></li>
+<li><code class="prettyprint">libpam0g-dev</code> (or the equivalent on your system)</li>
+</ul>
+
+<h2 id="project-structure">Project Structure</h2>
+
+<blockquote>
+<p>A minimal Dragon project layout:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>├── priv
+│   ├── etc
+│   │   └── yaws.conf
+│   └── www
+│       ├── &lt;static files &amp; dirs&gt;
+│       └── favicon.ico
+├── rebar.config
+└── src
+    ├── yourapp.app.src
+    ├── yourapp.lfe
+    ├── app-content.lfe
+    └── app-routes.lfe
+</code></pre>
+
+<p>A minimal Dragon project consists of the following:</p>
+
+<ul>
+<li>A project configuration file (<code class="prettyprint">rebar.config</code>)</li>
+<li>An Erlang application configuration file (<code class="prettyprint">app.src</code>)</li>
+<li>A YAWS configuration file (<code class="prettyprint">priv/etc/yaws.conf</code>)</li>
+<li>LFE source code (entry point, routes, and content-generation)</li>
+<li>Static content</li>
+</ul>
+
+<h2 id="project-configuration">Project Configuration</h2>
+
+<h3 id="rebar-config"><code class="prettyprint">rebar.config</code></h3>
+
+<blockquote>
+<p>Dragon project configuration file:</p>
+</blockquote>
+<pre class="highlight erlang"><code><span class="p">{</span><span class="n">deps</span><span class="p">,</span> <span class="p">[</span>
+   <span class="p">{</span><span class="n">lfe</span><span class="p">,</span> <span class="p">{</span><span class="n">git</span><span class="p">,</span> <span class="s">"https://github.com/rvirding/lfe.git"</span><span class="p">,</span>
+         <span class="p">{</span><span class="n">branch</span><span class="p">,</span> <span class="s">"develop"</span><span class="p">}}},</span>
+   <span class="p">{</span><span class="n">yaws</span><span class="p">,</span> <span class="p">{</span><span class="n">git</span><span class="p">,</span> <span class="s">"https://github.com/oubiwann/yaws.git"</span><span class="p">,</span>
+          <span class="p">{</span><span class="n">branch</span><span class="p">,</span> <span class="s">"rebar3-support"</span><span class="p">}}},</span>
+   <span class="p">{</span><span class="n">lfest</span><span class="p">,</span> <span class="p">{</span><span class="n">git</span><span class="p">,</span> <span class="s">"https://github.com/lfex/lfest.git"</span><span class="p">,</span>
+           <span class="p">{</span><span class="n">tag</span><span class="p">,</span> <span class="s">"0.3.0"</span><span class="p">}}},</span>
+   <span class="p">{</span><span class="n">exemplar</span><span class="p">,</span> <span class="p">{</span><span class="n">git</span><span class="p">,</span> <span class="s">"https://github.com/lfex/exemplar.git"</span><span class="p">,</span>
+              <span class="p">{</span><span class="n">tag</span><span class="p">,</span> <span class="s">"0.4.0"</span><span class="p">}}}</span>
+  <span class="p">]}.</span>
+
+<span class="p">{</span><span class="n">plugins</span><span class="p">,</span> <span class="p">[</span>
+   <span class="p">{</span><span class="n">'lfe-compile'</span><span class="p">,</span> <span class="p">{</span><span class="n">git</span><span class="p">,</span> <span class="s">"https://github.com/lfe-rebar3/compile.git"</span><span class="p">,</span>
+                   <span class="p">{</span><span class="n">tag</span><span class="p">,</span> <span class="s">"0.4.0"</span><span class="p">}}}</span>
+  <span class="p">]}.</span>
+
+<span class="p">{</span><span class="n">provider_hooks</span><span class="p">,</span> <span class="p">[{</span><span class="n">pre</span><span class="p">,</span> <span class="p">[{</span><span class="n">compile</span><span class="p">,</span> <span class="p">{</span><span class="n">lfe</span><span class="p">,</span> <span class="n">compile</span><span class="p">}}]}]}.</span>
+</code></pre>
+
+<p>LFE projects tend to use <code class="prettyprint">rebar3</code> to manage dependencies and builds, and Dragon is no
+exception. A pretty simple project configuration is demonstrated to the right.</p>
+
+<p>This project configuration highlights the major dependencies (some of which have other
+dependencies), all of which will be automatically downloaded for you by <code class="prettyprint">rebar3</code>. The
+dependencies and what they do are as follows:</p>
+
+<ul>
+<li><code class="prettyprint">lfe</code> - This is code that is Lisp Flavoured Erlang itself, upon which everything else depends</li>
+<li><code class="prettyprint">yaws</code> - This is the code that comprises the HTTP server</li>
+<li><code class="prettyprint">lfest</code> - This is the library we use for routes (URL dispatch) and generating YAWS-formatted HTTP responses</li>
+<li><code class="prettyprint">exemplar</code> - This is a library that generates XML/HTML from S-expressions (what we use to create page fragments, templates, etc.)</li>
+</ul>
+
+<h3 id="erlang-app-src">Erlang <code class="prettyprint">app.src</code></h3>
+
+<blockquote>
+<p>Dragon <code class="prettyprint">app.src</code> example:</p>
+</blockquote>
+<pre class="highlight erlang"><code><span class="c">%% -*- erlang -*-
+</span><span class="p">{</span><span class="n">application</span><span class="p">,</span> <span class="n">yourapp</span><span class="p">,</span>
+ <span class="p">[</span>
+  <span class="p">{</span><span class="n">description</span><span class="p">,</span> <span class="s">"Your Super-Great LFE+YAWS Web Application"</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">vsn</span><span class="p">,</span> <span class="s">"0.1.0"</span><span class="p">},</span>
+  <span class="p">{</span><span class="n">modules</span><span class="p">,</span> <span class="p">[</span><span class="n">yourapp</span><span class="p">]},</span>
+  <span class="p">{</span><span class="n">registered</span><span class="p">,</span> <span class="p">[]},</span>
+  <span class="p">{</span><span class="n">applications</span><span class="p">,</span> <span class="p">[</span><span class="n">kernel</span><span class="p">,</span> <span class="n">stdlib</span><span class="p">]},</span>
+  <span class="p">{</span><span class="n">included_applications</span><span class="p">,</span> <span class="p">[]},</span>
+  <span class="p">{</span><span class="n">mod</span><span class="p">,</span> <span class="p">{}},</span>
+  <span class="p">{</span><span class="n">env</span><span class="p">,</span> <span class="p">[]}</span>
+ <span class="p">]</span>
+<span class="p">}.</span>
+</code></pre>
+
+<p>All Erlang and LFE projects need to define an <code class="prettyprint">app.src</code> file. Dragon expects this file
+to be in the <code class="prettyprint">src</code> directory for your project (it will get &ldquo;compiled&rdquo; to the project&rsquo;s
+<code class="prettyprint">ebin</code> directory). Here is an example <code class="prettyprint">yourapp.app.src</code> file:</p>
+
+<h3 id="yaws-conf"><code class="prettyprint">yaws.conf</code></h3>
+
+<blockquote>
+<p>YAWS configuration file:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>logdir = log
+
+&lt;server localhost&gt;
+        port = 5099
+        listen = 0.0.0.0
+        appmods = &lt;/, yourapp exclude_paths favicon.ico&gt;
+        docroot = priv/www
+&lt;/server&gt;
+</code></pre>
+
+<blockquote>
+<p>Note that if the <code class="prettyprint">log</code> directory configured above doesn&rsquo;t exist, you will need to create it:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>$ mkdir log
+</code></pre>
+
+<p>In addition to the project as a whole, you will need to configure YAWS to run your project. This is done with the <code class="prettyprint">priv/etc/yaws.conf</code> file, as shown to the right.</p>
+
+<p>The most important configuration directive there is the <code class="prettyprint">appmods</code> one. This is where we tell YAWS what the entrypoint for our application is. In this case, it is the module <code class="prettyprint">yourapp</code>. YAWS will look in the module listed here and call its <code class="prettyprint">out/1</code> function.</p>
+
+<p>In this case, the output of <code class="prettyprint">yourapp:out/1</code> will be served at the path <code class="prettyprint">/</code> but any request to <code class="prettyprint">/favicon.ico</code> will be ignored; that will instead be served from the docroot at <code class="prettyprint">priv/www</code>. If there were other static resources (such as image, javascript, or style sheet directories) that we wanted YAWS to ignore, we would list those with <code class="prettyprint">favicon.ico</code> after the <code class="prettyprint">exclude_paths</code> option.</p>
+
+<h2 id="application-code">Application Code</h2>
+
+<h3 id="entry-point">Entry Point</h3>
+
+<blockquote>
+<p>Dragon entry point module:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>(defmodule yourapp
+  (export all))
+
+(defun out (arg-data)
+  "This is called by YAWS when the requested URL matches the URL specified in
+  the YAWS config (see ./priv/etc/yaws.conf) with the 'appmods' directive for
+  the virtual host in question.
+
+  In particular, this function is intended to handle all traffic for this
+  app."
+  (lfest:out-helper arg-data #'app-routes:routes/3))
+</code></pre>
+
+<p>We mentioned the application entry point above. To the right is an example of what that would look like.</p>
+
+<p>As you can see, there&rsquo;s not much to this file. In general, you may find that to be the case, even with fairly complicated web apps &ndash; much of the logic will very likely be organized into separate modules. Any top-level app-related code, though, will do well to live in this module.</p>
+
+<p>The <code class="prettyprint">out/1</code> function passes our app routes to the module where our routes are defined: <code class="prettyprint">app-routes:routes/3</code>. Let&rsquo;s take a look at that module next.</p>
+
+<h3 id="routes">Routes</h3>
+<pre class="highlight plaintext"><code>(defmodule app-routes
+  (export all))
+
+(include-lib "lfest/include/lfest-routes.lfe")
+
+(defroutes
+  ('GET "/"
+    (lfest-html-resp:ok
+      (app-content:page "Page Title" "Hello, World!"))))
+</code></pre>
+
+<h2 id="creating-content">Creating Content</h2>
+
+<p>TBD</p>
+
+<h2 id="running-the-server">Running the Server</h2>
+
+<p>TBD</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>If you would like to see a complete example of a minimal LFE+YAWS web application,
+be sure to check out this project:</p>
+
+<ul>
+<li><a href="https://github.com/lfex/lfeyawsmini">https://github.com/lfex/lfeyawsmini</a></li>
+</ul>
+
+<p>After a <code class="prettyprint">git clone</code>, check directory to <code class="prettyprint">lfeyawsmini</code> and run <code class="prettyprint">make run</code>. This will download all the deps, build them, and then run the server which will be accessible at
+<a href="http://localhost:5099">http://localhost:5099</a>.</p>
+
+<p>A slightly more interesting LFE+YAWS web application is here:</p>
+
+<ul>
+<li><a href="https://github.com/lfex/lfeyawsdemo">https://github.com/lfex/lfeyawsdemo</a></li>
+</ul>
+
+<p>This demo application uses Bootstrap and a litle bit of jquery to build a themed site with dynamically generated content.</p>
+
+<p>That project is the subject of the <a href="#">Dragon Tutorial</a></p>
+
+          <h1 id="the-dragon-tutorial">The Dragon Tutorial</h1>
+
+<p>The tutorial differs from the &ldquo;Getting Started&rdquo; guide in that it explores more of Dragon, its dependencies, and introduces more of its capabilities.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>TBD</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>TBD</p>
+
+<h2 id="project-configuration">Project Configuration</h2>
+
+<p>TBD</p>
+
+<h2 id="yaws-configuration">YAWS Configuration</h2>
+
+<p>TBD</p>
+
+<h2 id="application-routes">Application Routes</h2>
+
+<p>TBD</p>
+
+<h2 id="creating-content">Creating Content</h2>
+
+<p>TBD</p>
+
+<h2 id="running-the-server">Running the Server</h2>
+
+<p>TBD</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>TBD</p>
+
+          <h1 id="the-dragon-manifesto">The Dragon Manifesto</h1>
+
+<p>TBD!</p>
+
+          <h1 id="previous-versions">Previous Versions</h1>
+
+<p>Documentation is available for all previous releases:</p>
+
+<ul>
+<li><a href="../current/">Development version</a></li>
+<li><a href="../current/">0.0</a></li>
+</ul>
+
+          <h1 id="license">License</h1>
+
+<p>Copyright &copy; 2016 LFE Dragon Team</p>
+
+<p>Distributed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0.</a></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name=""></a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
